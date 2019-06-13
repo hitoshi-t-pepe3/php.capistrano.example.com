@@ -273,7 +273,7 @@ CREATE TABLE `dtb_bkup` (
   `bkup_memo` text,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`bkup_name`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,7 +305,7 @@ CREATE TABLE `dtb_bloc` (
   `plugin_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`device_type_id`,`bloc_id`),
   UNIQUE KEY `device_type_id` (`device_type_id`,`filename`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -712,7 +712,7 @@ CREATE TABLE `dtb_customer` (
   PRIMARY KEY (`customer_id`),
   UNIQUE KEY `secret_key` (`secret_key`(255)),
   KEY `dtb_customer_mobile_phone_id_key` (`mobile_phone_id`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -946,7 +946,7 @@ CREATE TABLE `dtb_index_list` (
   `recommend_flg` smallint(6) NOT NULL DEFAULT '0',
   `recommend_comment` text,
   PRIMARY KEY (`table_name`(255),`column_name`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1294,7 +1294,7 @@ CREATE TABLE `dtb_mobile_ext_session_id` (
   KEY `dtb_mobile_ext_session_id_param_value_key` (`param_value`(255)),
   KEY `dtb_mobile_ext_session_id_url_key` (`url`(255)),
   KEY `dtb_mobile_ext_session_id_create_date_key` (`create_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2407,7 +2407,7 @@ CREATE TABLE `dtb_session` (
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`sess_id`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2570,7 +2570,7 @@ CREATE TABLE `dtb_templates` (
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`template_code`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2706,7 +2706,7 @@ CREATE TABLE `mtb_constants` (
   `RANK` smallint(6) NOT NULL DEFAULT '0',
   `remarks` text,
   PRIMARY KEY (`id`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3206,7 +3206,7 @@ CREATE TABLE `mtb_permission` (
   `name` text,
   `RANK` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`(255))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ROW_FORMAT = DYNAMIC ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
